@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mapping on 天空之城</title>
+    <link>/tags/mapping/</link>
+    <description>Recent content in mapping on 天空之城</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Dec 2019 22:04:33 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/mapping/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elasticsearch Mapping Format</title>
+      <link>/post/elasticsearch-mapping-format/</link>
+      <pubDate>Sun, 08 Dec 2019 22:04:33 +0800</pubDate>
+      
+      <guid>/post/elasticsearch-mapping-format/</guid>
+      <description>参考 https://www.elastic.co/guide/en/elasticsearch/reference/6.3/mapping-date-format.html</description>
+    </item>
+    
+  </channel>
+</rss>

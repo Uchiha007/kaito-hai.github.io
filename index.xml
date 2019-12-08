@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>天空之城</title>
+    <link>/</link>
+    <description>Recent content on 天空之城</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Dec 2019 22:04:33 +0800</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elasticsearch Mapping Format</title>
+      <link>/post/elasticsearch-mapping-format/</link>
+      <pubDate>Sun, 08 Dec 2019 22:04:33 +0800</pubDate>
+      
+      <guid>/post/elasticsearch-mapping-format/</guid>
+      <description>参考 https://www.elastic.co/guide/en/elasticsearch/reference/6.3/mapping-date-format.html</description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch Common Options</title>
+      <link>/post/elasticsearch-common-options/</link>
+      <pubDate>Sun, 08 Dec 2019 21:58:36 +0800</pubDate>
+      
+      <guid>/post/elasticsearch-common-options/</guid>
+      <description>人类可读的输出 Statistics are returned in a format suitable for humans (eg &amp;ldquo;exists_time&amp;rdquo;: &amp;ldquo;1h&amp;rdquo; or &amp;ldquo;size&amp;rdquo;: &amp;ldquo;1kb&amp;rdquo;) and for computers (eg &amp;ldquo;exists_time_in_millis&amp;rdquo;: 3600000 or &amp;ldquo;size_in_bytes&amp;rdquo;: 1024). The human readable values can be turned off by adding ?human=false to the query string. This makes sense when the stats results are being consumed by a monitoring tool, rather than intended for human consumption. The default for the human flag is false. 日期计算 Most parameters which accept a formatted date value — such as gt and lt in range queries range queries, or from and to in daterange aggregations — understand date maths. The expression starts with an anchor date, which can either be now, or a date string ending with ||. This anchor date can optionally be followed by one or more maths expressions: +1h - add one hour</description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch 之范围查询</title>
+      <link>/post/elasticsearch-range-query/</link>
+      <pubDate>Wed, 04 Dec 2019 09:28:55 +0800</pubDate>
+      
+      <guid>/post/elasticsearch-range-query/</guid>
+      <description>范围查询 匹配字段在某一特定范围的文档。Lucene 查询取决于字段类型，对于字符串字段使用 TermRangeQuery，数字/日期类型使用 NumericRangeQuery。下面示例将返回 age 在 10 到 20 之间所有的文档。 curl -X GET &amp;quot;localhost:9200/_search?pretty&amp;quot; -H &#39;Content-Type: application/json&#39; -d&#39; { &amp;quot;query&amp;quot;: { &amp;quot;range&amp;quot; : { &amp;quot;age&amp;quot; : { &amp;quot;gte&amp;quot; : 10, &amp;quot;lte&amp;quot; : 20, &amp;quot;boost&amp;quot; : 2.0 } } } } &#39; GET _search { &amp;quot;query&amp;quot;: { &amp;quot;range&amp;quot; : {</description>
+    </item>
+    
+    <item>
+      <title>归档</title>
+      <link>/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/archives/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

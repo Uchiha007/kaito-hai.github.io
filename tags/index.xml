@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 天空之城</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 天空之城</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Dec 2019 22:04:33 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mapping</title>
+      <link>/tags/mapping/</link>
+      <pubDate>Sun, 08 Dec 2019 22:04:33 +0800</pubDate>
+      
+      <guid>/tags/mapping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>options</title>
+      <link>/tags/options/</link>
+      <pubDate>Sun, 08 Dec 2019 21:58:36 +0800</pubDate>
+      
+      <guid>/tags/options/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DSL</title>
+      <link>/tags/dsl/</link>
+      <pubDate>Wed, 04 Dec 2019 09:28:55 +0800</pubDate>
+      
+      <guid>/tags/dsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>query</title>
+      <link>/tags/query/</link>
+      <pubDate>Wed, 04 Dec 2019 09:28:55 +0800</pubDate>
+      
+      <guid>/tags/query/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DSL on 天空之城</title>
+    <link>/tags/dsl/</link>
+    <description>Recent content in DSL on 天空之城</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 04 Dec 2019 09:28:55 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/dsl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elasticsearch 之范围查询</title>
+      <link>/post/elasticsearch-range-query/</link>
+      <pubDate>Wed, 04 Dec 2019 09:28:55 +0800</pubDate>
+      
+      <guid>/post/elasticsearch-range-query/</guid>
+      <description>范围查询 匹配字段在某一特定范围的文档。Lucene 查询取决于字段类型，对于字符串字段使用 TermRangeQuery，数字/日期类型使用 NumericRangeQuery。下面示例将返回 age 在 10 到 20 之间所有的文档。 curl -X GET &amp;quot;localhost:9200/_search?pretty&amp;quot; -H &#39;Content-Type: application/json&#39; -d&#39; { &amp;quot;query&amp;quot;: { &amp;quot;range&amp;quot; : { &amp;quot;age&amp;quot; : { &amp;quot;gte&amp;quot; : 10, &amp;quot;lte&amp;quot; : 20, &amp;quot;boost&amp;quot; : 2.0 } } } } &#39; GET _search { &amp;quot;query&amp;quot;: { &amp;quot;range&amp;quot; : {</description>
+    </item>
+    
+  </channel>
+</rss>
