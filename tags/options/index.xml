@@ -17,7 +17,7 @@
       <pubDate>Sun, 08 Dec 2019 21:58:36 +0800</pubDate>
       
       <guid>/post/elasticsearch-common-options/</guid>
-      <description>人类可读的输出 Statistics are returned in a format suitable for humans (eg &amp;ldquo;exists_time&amp;rdquo;: &amp;ldquo;1h&amp;rdquo; or &amp;ldquo;size&amp;rdquo;: &amp;ldquo;1kb&amp;rdquo;) and for computers (eg &amp;ldquo;exists_time_in_millis&amp;rdquo;: 3600000 or &amp;ldquo;size_in_bytes&amp;rdquo;: 1024). The human readable values can be turned off by adding ?human=false to the query string. This makes sense when the stats results are being consumed by a monitoring tool, rather than intended for human consumption. The default for the human flag is false. 日期计算 Most parameters which accept a formatted date value — such as gt and lt in range queries range queries, or from and to in daterange aggregations — understand date maths. The expression starts with an anchor date, which can either be now, or a date string ending with ||. This anchor date can optionally be followed by one or more maths expressions: +1h - add one hour</description>
+      <description>常用选项 以下选项可应用于所有 REST API。 漂亮的结果 当附加 ?pretty=true 到任何请求时，返回的 JSON 格式将会格式化（仅用于调试！）另一个选项是设置为 ?format=yaml，这将导致结果以(有时)更具可读性的 yaml 格式返回。 人类可读的输出 统计数据以适合人类阅读的格式返回，（例如&amp;quot;exists_time&amp;q</description>
     </item>
     
   </channel>

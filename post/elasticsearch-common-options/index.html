@@ -84,7 +84,7 @@
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">1 分钟</time>
+	<time class="meta__text">3 分钟</time>
 </div></div>
 		</header>
 
@@ -94,10 +94,13 @@
         <div class="toc__menu">
           <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#heading">常用选项</a>
       <ul>
+        <li><a href="#heading1">漂亮的结果</a></li>
         <li><a href="#output">人类可读的输出</a></li>
         <li><a href="#datemath">日期计算</a></li>
+        <li><a href="#heading2">响应过滤</a></li>
+        <li><a href="#timeunits">时间单元</a></li>
       </ul>
     </li>
   </ul>
@@ -117,15 +120,130 @@
     </script>
   
 <div class="content post__content clearfix">
-			<h3 id="output"><a href="#output">人类可读的输出</a></h3>
-<p>Statistics are returned in a format suitable for humans (eg &ldquo;exists_time&rdquo;: &ldquo;1h&rdquo; or &ldquo;size&rdquo;: &ldquo;1kb&rdquo;) and for computers (eg &ldquo;exists_time_in_millis&rdquo;: 3600000 or &ldquo;size_in_bytes&rdquo;: 1024). The human readable values can be turned off by adding ?human=false to the query string. This makes sense when the stats results are being consumed by a monitoring tool, rather than intended for human consumption. The default for the human flag is false.</p>
+			<h2 id="heading">常用选项</h2>
+<p>以下选项可应用于所有 REST API。</p>
+<h3 id="heading1">漂亮的结果</h3>
+<p>当附加 <code>?pretty=true</code> 到任何请求时，返回的 JSON 格式将会格式化（仅用于调试！）另一个选项是设置为 <code>?format=yaml</code>，这将导致结果以(有时)更具可读性的 yaml 格式返回。</p>
+<h3 id="output"><a href="#output">人类可读的输出</a></h3>
+<p>统计数据以适合人类阅读的格式返回，（例如<code>&quot;exists_time&quot;:&quot;1h&quot;</code> 或 <code>&quot;size&quot;:&quot;1kb&quot;</code>)，而对于电脑来说就是（<code>&quot;exists_time_in_millis&quot;: 3600000</code> or <code>&quot;size_in_bytes&quot;: 1024</code>）。可以通过添加 <code>?human=false</code> 到查询字符串来关闭它。它的意义在于统计结果被监控工具使用，而不是供人使用。该值默认为 false。</p>
 <h3 id="datemath"><a href="#datemath">日期计算</a></h3>
-<p>Most parameters which accept a formatted date value — such as gt and lt in range queries range queries, or from and to in daterange aggregations — understand date maths.</p>
-<p>The expression starts with an anchor date, which can either be now, or a date string ending with ||. This anchor date can optionally be followed by one or more maths expressions:</p>
-<p>+1h - add one hour
--1d - subtract one day
-/d - round down to the nearest day</p>
-<h4 id="heading">参考</h4>
+<p>大多数接受格式化日期值的参数，如 范围查询 range 中的 <code>gt</code> 以及 <code>lt</code> ，或者 <a href="/post/elasticsearch-search-aggregations-bucket-daterange-aggregation/">daterange aggregations</a> 中的 <code>from</code> 和 <code>to</code> 都可以接受日期计算的方式。</p>
+<p>表达式以锚点日期开头，可以是 <code>now</code> ，或者是一个以 <code>||</code> 结尾的日期字符串。此锚定日期可后面可以跟着一个或多个数学表达式：</p>
+<ul>
+<li><code>+1h</code> 增加一个小时</li>
+<li><code>-1d</code> 减去一天</li>
+<li><code>/d</code> 舍到最近的一天</li>
+</ul>
+<p>表示时刻的单元与表示时长的 <a href="/post/elasticsearch-common-options#timeunits">时间单元</a> 并不一样，时刻单元如下：</p>
+<p>y - 年，M - 月，w - 周，d - 天，h,H - 小时，m - 分钟，s - 秒</p>
+<p>假设 <code>now</code> 是 <code>2001-01-01 12:00:00</code>，那么：</p>
+<ul>
+<li><code>now+1h` </code>now<code>换算为毫秒，加一个小时，结果为：</code>2001-01-01 13:00:00`</li>
+<li><code>now-1h</code> 结果为：<code>2001-01-01 11:00:00</code></li>
+<li><code>now-1h/d</code> 结果为：<code>2001-01-01 00:00:00</code></li>
+<li><code>2001.02.01||+1M/d</code> 结果为 <code>2001-03-01 00:00:00</code></li>
+</ul>
+<h3 id="heading2">响应过滤</h3>
+<p>所有 REST APIs 都接受 <code>filter_path</code> 参数，该参数可用于减少 Elasticearch 返回的响应。此参数采用逗号分隔的点法标记过滤器列表。</p>
+<pre><code class="language-shell">
+curl -X GET &quot;localhost:9200/_search?q=elasticsearch&amp;filter_path=took,hits.hits._id,hits.hits._score&amp;pretty&quot;
+</code></pre>
+<p>响应结果：</p>
+<pre><code class="language-json">{
+  &quot;took&quot; : 3,
+  &quot;hits&quot; : {
+    &quot;hits&quot; : [
+      {
+        &quot;_id&quot; : &quot;0&quot;,
+        &quot;_score&quot; : 1.6375021
+      }
+    ]
+  }
+}
+</code></pre>
+<p>它还支持 <code>*</code> 通配符以匹配任何字段或字段的部分名称：</p>
+<pre><code class="language-shell">
+curl -X GET &quot;localhost:9200/_cluster/state?filter_path=metadata.indices.*.stat*&amp;pretty&quot;
+</code></pre>
+<p>响应：</p>
+<pre><code class="language-json">{
+  &quot;metadata&quot; : {
+    &quot;indices&quot; : {
+      &quot;twitter&quot;: {&quot;state&quot;: &quot;open&quot;}
+    }
+  }
+}
+</code></pre>
+<p>并且 <code>**</code> 通配符可以用于不知道确切路径的字段。例如，我们可以通过以下请求返回每个段的 Lucene 版本：</p>
+<pre><code class="language-shell">
+curl -X GET &quot;localhost:9200/_cluster/state?filter_path=routing_table.indices.**.state&amp;pretty&quot;
+</code></pre>
+<p>响应：</p>
+<pre><code class="language-json">{
+  &quot;routing_table&quot;: {
+    &quot;indices&quot;: {
+      &quot;twitter&quot;: {
+        &quot;shards&quot;: {
+          &quot;0&quot;: [{&quot;state&quot;: &quot;STARTED&quot;}, {&quot;state&quot;: &quot;UNASSIGNED&quot;}],
+          &quot;1&quot;: [{&quot;state&quot;: &quot;STARTED&quot;}, {&quot;state&quot;: &quot;UNASSIGNED&quot;}],
+          &quot;2&quot;: [{&quot;state&quot;: &quot;STARTED&quot;}, {&quot;state&quot;: &quot;UNASSIGNED&quot;}],
+          &quot;3&quot;: [{&quot;state&quot;: &quot;STARTED&quot;}, {&quot;state&quot;: &quot;UNASSIGNED&quot;}],
+          &quot;4&quot;: [{&quot;state&quot;: &quot;STARTED&quot;}, {&quot;state&quot;: &quot;UNASSIGNED&quot;}]
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>还可以通过在过滤器前面加上字符 <code>-</code> 将一个或多个字段排除在外：</p>
+<pre><code class="language-shell">
+curl -X GET &quot;localhost:9200/_count?filter_path=-_shards&amp;pretty&quot;
+</code></pre>
+<pre><code class="language-json">{
+  &quot;count&quot; : 5
+}
+</code></pre>
+<p>可以将包含和排除合并在同一个表达式中以达到更好的控制，在这种情况下，将首先应用排除筛选器，然后使用包含式筛选器再次对结果进行过滤：</p>
+<pre><code class="language-shell">
+curl -X GET &quot;localhost:9200/_cluster/state?filter_path=metadata.indices.*.state,-metadata.indices.logstash-*&amp;pretty&quot;
+</code></pre>
+<pre><code class="language-json">{
+  &quot;metadata&quot; : {
+    &quot;indices&quot; : {
+      &quot;index-1&quot; : {&quot;state&quot; : &quot;open&quot;},
+      &quot;index-2&quot; : {&quot;state&quot; : &quot;open&quot;},
+      &quot;index-3&quot; : {&quot;state&quot; : &quot;open&quot;}
+    }
+  }
+}
+</code></pre>
+<p>注意，Elasticsearch 有时直接返回字段的原始值，比如 <code>_source</code> 字段。如果想要过滤 <code>_source</code> 字段，你应该考虑结合已经存在的 <code>_source</code>（<a href="/post/elasticsearch-get-api">详细用法</a>） 参数以及 <code>filter_path</code>：</p>
+<pre><code class="language-shell">curl -X POST &quot;localhost:9200/library/book?refresh&amp;pretty&quot; -H 'Content-Type: application/json' -d'
+{&quot;title&quot;: &quot;Book #1&quot;, &quot;rating&quot;: 200.1}
+'
+curl -X POST &quot;localhost:9200/library/book?refresh&amp;pretty&quot; -H 'Content-Type: application/json' -d'
+{&quot;title&quot;: &quot;Book #2&quot;, &quot;rating&quot;: 1.7}
+'
+curl -X POST &quot;localhost:9200/library/book?refresh&amp;pretty&quot; -H 'Content-Type: application/json' -d'
+{&quot;title&quot;: &quot;Book #3&quot;, &quot;rating&quot;: 0.1}
+'
+curl -X GET &quot;localhost:9200/_search?filter_path=hits.hits._source&amp;_source=title&amp;sort=rating:desc&amp;pretty&quot;
+</code></pre>
+<pre><code class="language-json">{
+  &quot;hits&quot; : {
+    &quot;hits&quot; : [ {
+      &quot;_source&quot;:{&quot;title&quot;:&quot;Book #1&quot;}
+    }, {
+      &quot;_source&quot;:{&quot;title&quot;:&quot;Book #2&quot;}
+    }, {
+      &quot;_source&quot;:{&quot;title&quot;:&quot;Book #3&quot;}
+    } ]
+  }
+}
+</code></pre>
+<h3 id="timeunits"><a href="#timeunits">时间单元</a></h3>
+<p>每当需要指定持续时间时，例如对于 <code>timeout</code> 参数，持续时间必须指定单位，<code>2d</code>表示 2 天。支持的单位有：</p>
+<h4 id="heading3">参考</h4>
 <ol>
 <li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/common-options.html"><a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/common-options.html">https://www.elastic.co/guide/en/elasticsearch/reference/6.3/common-options.html</a></a></li>
 </ol>
