@@ -6,10 +6,19 @@
     <description>Recent content in elasticsearch on 天空之城</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Dec 2019 22:04:33 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Dec 2019 10:10:51 +0800</lastBuildDate>
     
 	<atom:link href="/categories/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Elasticsearch 查询与过滤是按什么顺序执行的？</title>
+      <link>/post/translation_elasticsearch-query-execution-order/</link>
+      <pubDate>Mon, 09 Dec 2019 10:10:51 +0800</pubDate>
+      
+      <guid>/post/translation_elasticsearch-query-execution-order/</guid>
+      <description>我们经常收到关于过滤器执行顺序的问题，过滤器是在查询之前执行还是之后执行等等的问题。些确实是重要的问题，快速执行查询的秘诀通常就是先运行代价低的再运行代价高。你或许过去听到或者读到过滤在查询之前执行的说法。虽然这句话很好地说明了我们没有计算不匹配的过滤文档分数，但真实情况要更复杂一点。同样</description>
+    </item>
     
     <item>
       <title>Elasticsearch Mapping Format</title>
@@ -21,7 +30,7 @@
     </item>
     
     <item>
-      <title>Elasticsearch Common Options</title>
+      <title>Elasticsearch 通用配置</title>
       <link>/post/elasticsearch-common-options/</link>
       <pubDate>Sun, 08 Dec 2019 21:58:36 +0800</pubDate>
       

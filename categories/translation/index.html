@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>mapping - 天空之城</title>
+	<title>translation - 天空之城</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -14,7 +14,7 @@
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="alternate" type="application/rss+xml" href="/tags/mapping/index.xml" title="天空之城">
+	<link rel="alternate" type="application/rss+xml" href="/categories/translation/index.xml" title="天空之城">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
@@ -72,27 +72,30 @@
 <main class="main list" role="main"><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
-			<a href="/post/elasticsearch-mapping-format/" rel="bookmark">
-			Elasticsearch Mapping Format
+			<a href="/post/translation_elasticsearch-query-execution-order/" rel="bookmark">
+			Elasticsearch 查询与过滤是按什么顺序执行的？
 			</a>
 		</h3>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-12-08T22:04:33">2019-12-08</time>
+	<time class="meta__text" datetime="2019-12-09T10:10:51">2019-12-09</time>
 </div>
 
 <div class="meta__item-categories meta__item">
 	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/elasticsearch" rel="category">elasticsearch</a></span>
+	<span class="meta__text"><a class="meta__link" href="/categories/elasticsearch" rel="category">elasticsearch</a>, <a class="meta__link" href="/categories/translation" rel="category">translation</a></span>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text">1 分钟</time>
+	<time class="meta__text">6 分钟</time>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		参考 https://www.elastic.co/guide/en/elasticsearch/reference/6.3/mapping-date-format.html
+		我们经常收到关于过滤器执行顺序的问题，过滤器是在查询之前执行还是之后执行等等的问题。些确实是重要的问题，快速执行查询的秘诀通常就是先运行代价低的再运行代价高。你或许过去听到或者读到过滤在查询之前执行的说法。虽然这句话很好地说明了我们没有计算不匹配的过滤文档分数，但真实情况要更复杂一点。同样
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/translation_elasticsearch-query-execution-order/">阅读全文…</a>
 	</div>
 </article>
 </main>
