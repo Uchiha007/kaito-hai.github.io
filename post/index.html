@@ -72,6 +72,34 @@
 <main class="main list" role="main"><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
+			<a href="/post/analysis-elasticsearch-trouble-shooting/" rel="bookmark">
+			Elasticsearch 故障分析解决
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-12-24T23:38:36">2019-12-24</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/elasticsearch" rel="category">elasticsearch</a></span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		集群状态显示黄色 集群中存在未分配的 shards。在某个节点重新启动后也不能自动分配。 查看集群副本恢复状态： GET user/_recovery?active_only=true 查看未分配原因： GET _cluster/allocation/explain?pretty 结果中有：allocation_status: &quot;no_attempt&quot; 重新执行分配： POST /_cluster/reroute?retry_failed=true 查看相应索引的分片： GET /_cat/shards?index=index_name 相关参数： # 最大重试，默认为 5 index.allocation.max_retries # 负载均衡参数，默认为 true cluster.routing.rebalance.enable 参考 cat API
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/post/analysis-elasticsearch-trouble-shooting/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
 			<a href="/post/translation_elasticsearch-query-execution-order/" rel="bookmark">
 			Elasticsearch 查询与过滤是按什么顺序执行的？
 			</a>
@@ -199,6 +227,7 @@
 	<h4 class="widget__title">近期文章</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/analysis-elasticsearch-trouble-shooting/">Elasticsearch 故障分析解决</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/translation_elasticsearch-query-execution-order/">Elasticsearch 查询与过滤是按什么顺序执行的？</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/elasticsearch-mapping-format/">Elasticsearch Mapping Format</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/elasticsearch-common-options/">Elasticsearch 通用配置</a></li>
@@ -218,7 +247,7 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">标签</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/analysis" title="Analysis">Analysis (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/analysis" title="Analysis">Analysis (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/dsl" title="Dsl">Dsl (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mapping" title="Mapping">Mapping (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/options" title="Options">Options (1)</a>
