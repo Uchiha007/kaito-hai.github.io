@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/cheatsheet/</loc>
+    <lastmod>2019-12-27T23:46:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cheatsheet/php/</loc>
+    <lastmod>2019-12-27T23:46:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-12-27T23:46:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cheatsheet/mysql/</loc>
+    <lastmod>2019-12-27T23:34:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cheatsheet/mysql-json/</loc>
+    <lastmod>2019-12-27T23:17:26+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/analysis/</loc>
     <lastmod>2019-12-24T23:38:36+08:00</lastmod>
   </url>
@@ -29,11 +54,6 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-12-24T23:38:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2019-12-24T23:38:36+08:00</lastmod>
   </url>
   

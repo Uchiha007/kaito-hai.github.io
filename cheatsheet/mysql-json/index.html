@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>mapping - 天空之城</title>
+	<title>Mysql Json  - 天空之城</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -14,7 +14,6 @@
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="alternate" type="application/rss+xml" href="/tags/mapping/index.xml" title="天空之城">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
@@ -69,39 +68,101 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main"><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/post/elasticsearch-mapping-format/" rel="bookmark">
-			Elasticsearch Mapping Format
-			</a>
-		</h3>
-		<div class="list__meta meta">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Mysql Json </h1>
+			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-12-08T22:04:33">2019-12-08</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/elasticsearch" rel="category">elasticsearch</a></span>
+	<time class="meta__text" datetime="2019-12-27T23:17:26">2019-12-27</time>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
 	<time class="meta__text">1 分钟</time>
 </div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		参考 https://www.elastic.co/guide/en/elasticsearch/reference/6.3/mapping-date-format.html
-	</div>
-</article>
+		</header>
+
+  
+    <div class="toc">
+        <div class="toc__title"><span id="toc_menu_tip">展开书签</span></div>
+        <div class="toc__menu">
+          <nav id="TableOfContents"></nav>
+        </div>  
+    </div>
+    <script type="text/javascript">
+    $(".toc__title").click( function () {
+      if($(".toc__menu").css('display') == 'none') {
+        $(".toc__menu").show(); 
+        $("#toc_menu_tip").html("收起书签");
+      } else {
+        $(".toc__menu").hide(); 
+        $("#toc_menu_tip").html("展开书签");
+      }
+    });
+    </script>
+  
+<div class="content post__content clearfix">
+			<ul>
+<li>JSON_REPLACE</li>
+</ul>
+<pre><code class="language-sql">-- one way
+JSON_REPLACE(data,'$.&quot;time&quot;',data-&gt;'$.&quot;time&quot;' * 1000)
+
+-- another way
+JSON_REPLACE(data,'$.time',data-&gt;'$.time' * 1000)
+</code></pre>
+<ul>
+<li>JSON_EXTRACT</li>
+</ul>
+<pre><code class="language-sql">JSON_EXTRACT(data,'$.title')
+</code></pre>
+<ul>
+<li>JSON_INSERT</li>
+</ul>
+<pre><code class="language-sql">JSON_INSERT(data, '$.title', CONVERT('{&quot;type&quot;:&quot;string&quot;}',JSON));
+</code></pre>
+<ul>
+<li>JSON_SET</li>
+</ul>
+<pre><code class="language-sql">json_set(fields,&quot;$.title&quot;,CONVERT('{&quot;type&quot;: &quot;string&quot;}',JSON));
+
+-- update 
+update post set fields = json_set(fields,&quot;$.title&quot;,CONVERT('{&quot;type&quot;: &quot;string&quot;}',JSON));
+</code></pre>
+
+		</div>
+		
+	</article>
 </main>
+<div class="social-share"></div>
+  <br/>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="harry avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">关于 harry</span>
+	</div>
+	<div class="authorbox__description">
+		学习记录。
+	</div>
+</div>
+
+
+
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/cheatsheet/mysql/" rel="next"><span class="post-nav__caption">后一篇&thinsp;»</span><p class="post-nav__post-title">Mysql</p></a>
+	</div>
+</nav>
 
 
 
 			</div>
-			
-<aside class="sidebar"><div class="widget-search widget">
+			<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="//www.google.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">

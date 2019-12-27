@@ -6,10 +6,37 @@
     <description>Recent content on 天空之城</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 24 Dec 2019 23:38:36 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Dec 2019 23:46:44 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Php</title>
+      <link>/cheatsheet/php/</link>
+      <pubDate>Fri, 27 Dec 2019 23:46:44 +0800</pubDate>
+      
+      <guid>/cheatsheet/php/</guid>
+      <description>Composer 使用 安装 curl -sS https://getcomposer.org/installer | php curl -sS https://getcomposer.org/installer | php -- --install-dir=/data/home（存放的路径） mv composer.phar /usr/local/bin/composer 记得做这个操作的时候需在 COMPOSER.PHAR 文件 优化速度 composer dumpautoload -o 设置请求头 // 返回 json 头部设置 header(&#39;HTTP/1.1 200 Ok&#39;); header(&#39;Content-Type: application/json ; charset=utf-8&#39;); // 图片输出 header(&amp;quot;Content-type: image/png&amp;quot;); 跨域设置请求头 // 允许 ajax 跨域请求 // 允许 www.test.com 发起的跨域请求 header(&amp;quot;Access-Control-Allow-Origin: www.test.com&amp;quot;); //如果需要设置允许所有域名发起的跨</description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>/cheatsheet/mysql/</link>
+      <pubDate>Fri, 27 Dec 2019 23:34:15 +0800</pubDate>
+      
+      <guid>/cheatsheet/mysql/</guid>
+      <description>创建表 DROP TABLE IF EXISTS `post`; CREATE TABLE `post` ( `id` int(11) unsigned NOT NULL AUTO_INCREMENT, `title` char(25) NOT NULL DEFAULT &#39;&#39;, `summary` char(12) NOT NULL DEFAULT &#39;&#39;, `content` text unsigned NOT NULL DEFAULT 0, `keyword` varchar(16) NOT NULL DEFAULT &#39;&#39;, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin; 修改表结构 alter table post add column subtitle VARCHAR(32) COLLATE utf8_bin NOT NULL DEFAULT &#39;&#39;; alter table post add column deleted_at datetime; alter table post add index deleted_at(deleted_at); alter table `post` add column `status` tinyint(4) NOT NULL DEFAULT 0; 导出导入 # 语法： mysqldump -u &amp;lt;username&amp;gt; -p db &amp;gt; /path/to/***.sql # 将某个库中的某个表导出 mysqldump -h 127.0.0.1 -P 3306 -uroot -ppwd db_name table_name &amp;gt; ***.sql # 将数据从文件导入到某个库 mysql</description>
+    </item>
+    
+    <item>
+      <title>Mysql Json </title>
+      <link>/cheatsheet/mysql-json/</link>
+      <pubDate>Fri, 27 Dec 2019 23:17:26 +0800</pubDate>
+      
+      <guid>/cheatsheet/mysql-json/</guid>
+      <description> JSON_REPLACE  -- one way JSON_REPLACE(data,&#39;$.&amp;quot;time&amp;quot;&#39;,data-&amp;gt;&#39;$.&amp;quot;time&amp;quot;&#39; * 1000) -- another way JSON_REPLACE(data,&#39;$.time&#39;,data-&amp;gt;&#39;$.time&#39; * 1000)   JSON_EXTRACT  JSON_EXTRACT(data,&#39;$.title&#39;)   JSON_INSERT  JSON_INSERT(data, &#39;$.title&#39;, CONVERT(&#39;{&amp;quot;type&amp;quot;:&amp;quot;string&amp;quot;}&#39;,JSON));   JSON_SET  json_set(fields,&amp;quot;$.title&amp;quot;,CONVERT(&#39;{&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;}&#39;,JSON)); -- update update post set fields = json_set(fields,&amp;quot;$.title&amp;quot;,CONVERT(&#39;{&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;}&#39;,JSON));  </description>
+    </item>
     
     <item>
       <title>Elasticsearch 故障分析解决</title>

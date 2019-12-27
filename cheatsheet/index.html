@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>mapping - 天空之城</title>
+	<title>Cheatsheets - 天空之城</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
@@ -14,7 +14,7 @@
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="alternate" type="application/rss+xml" href="/tags/mapping/index.xml" title="天空之城">
+	<link rel="alternate" type="application/rss+xml" href="/cheatsheet/index.xml" title="天空之城">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">	
 	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
@@ -72,19 +72,14 @@
 <main class="main list" role="main"><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
-			<a href="/post/elasticsearch-mapping-format/" rel="bookmark">
-			Elasticsearch Mapping Format
+			<a href="/cheatsheet/php/" rel="bookmark">
+			Php
 			</a>
 		</h3>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-12-08T22:04:33">2019-12-08</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/elasticsearch" rel="category">elasticsearch</a></span>
+	<time class="meta__text" datetime="2019-12-27T23:46:44">2019-12-27</time>
 </div>
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
@@ -92,7 +87,53 @@
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		参考 https://www.elastic.co/guide/en/elasticsearch/reference/6.3/mapping-date-format.html
+		Composer 使用 安装 curl -sS https://getcomposer.org/installer | php curl -sS https://getcomposer.org/installer | php -- --install-dir=/data/home（存放的路径） mv composer.phar /usr/local/bin/composer 记得做这个操作的时候需在 COMPOSER.PHAR 文件 优化速度 composer dumpautoload -o 设置请求头 // 返回 json 头部设置 header('HTTP/1.1 200 Ok'); header('Content-Type: application/json ; charset=utf-8'); // 图片输出 header(&quot;Content-type: image/png&quot;); 跨域设置请求头 // 允许 ajax 跨域请求 // 允许 www.test.com 发起的跨域请求 header(&quot;Access-Control-Allow-Origin: www.test.com&quot;); //如果需要设置允许所有域名发起的跨
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/cheatsheet/php/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/cheatsheet/mysql/" rel="bookmark">
+			Mysql
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-12-27T23:34:15">2019-12-27</time>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		创建表 DROP TABLE IF EXISTS `post`; CREATE TABLE `post` ( `id` int(11) unsigned NOT NULL AUTO_INCREMENT, `title` char(25) NOT NULL DEFAULT '', `summary` char(12) NOT NULL DEFAULT '', `content` text unsigned NOT NULL DEFAULT 0, `keyword` varchar(16) NOT NULL DEFAULT '', PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin; 修改表结构 alter table post add column subtitle VARCHAR(32) COLLATE utf8_bin NOT NULL DEFAULT ''; alter table post add column deleted_at datetime; alter table post add index deleted_at(deleted_at); alter table `post` add column `status` tinyint(4) NOT NULL DEFAULT 0; 导出导入 # 语法： mysqldump -u &lt;username&gt; -p db &gt; /path/to/***.sql # 将某个库中的某个表导出 mysqldump -h 127.0.0.1 -P 3306 -uroot -ppwd db_name table_name &gt; ***.sql # 将数据从文件导入到某个库 mysql
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/cheatsheet/mysql/">阅读全文…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h3 class="list__title post__title ">
+			<a href="/cheatsheet/mysql-json/" rel="bookmark">
+			Mysql Json 
+			</a>
+		</h3>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-12-27T23:17:26">2019-12-27</time>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text">1 分钟</time>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		 JSON_REPLACE  -- one way JSON_REPLACE(data,'$.&quot;time&quot;',data-&gt;'$.&quot;time&quot;' * 1000) -- another way JSON_REPLACE(data,'$.time',data-&gt;'$.time' * 1000)   JSON_EXTRACT  JSON_EXTRACT(data,'$.title')   JSON_INSERT  JSON_INSERT(data, '$.title', CONVERT('{&quot;type&quot;:&quot;string&quot;}',JSON));   JSON_SET  json_set(fields,&quot;$.title&quot;,CONVERT('{&quot;type&quot;: &quot;string&quot;}',JSON)); -- update update post set fields = json_set(fields,&quot;$.title&quot;,CONVERT('{&quot;type&quot;: &quot;string&quot;}',JSON));  
 	</div>
 </article>
 </main>
