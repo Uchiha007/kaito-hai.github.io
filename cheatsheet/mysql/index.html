@@ -139,6 +139,14 @@ mysqldump -h 127.0.0.1 -P 3306 -uroot -ppwd db_name table_name &gt; ***.sql
 
 # 将数据从文件导入到某个库
 mysql -h 127.0.0.1 -u root -p pwd db_name &lt; /path/to/***.sql
+
+# 将查询结果导出到文件
+mysql -h 127.0.0.1  -P 3306  -uroot -p pwd -D db_name -e &quot;select * from table_name where id &gt; 1000&quot; &gt;&gt; /root/result.txt
+</code></pre>
+<ul>
+<li>将一个表的数据插入到另一个表</li>
+</ul>
+<pre><code class="language-sql"> insert into `tableA` (`field1`,`field2`) select `field3`,`field4` from `tableB` limit 1;
 </code></pre>
 
 		</div>
@@ -255,7 +263,7 @@ mysql -h 127.0.0.1 -u root -p pwd db_name &lt; /path/to/***.sql
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2019 天空之城.
+			&copy; 2020 天空之城.
 			<span class="footer__copyright-credits">使用 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 技术与 <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> 主题</span>
 		</div>
 	</div>

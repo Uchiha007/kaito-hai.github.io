@@ -17,7 +17,7 @@
       <pubDate>Tue, 24 Dec 2019 23:38:36 +0800</pubDate>
       
       <guid>/post/analysis-elasticsearch-trouble-shooting/</guid>
-      <description>集群状态显示黄色 集群中存在未分配的 shards。在某个节点重新启动后也不能自动分配。 查看集群副本恢复状态： GET user/_recovery?active_only=true 查看未分配原因： GET _cluster/allocation/explain?pretty 结果中有：allocation_status: &amp;quot;no_attempt&amp;quot; 重新执行分配： POST /_cluster/reroute?retry_failed=true 查看相应索引的分片： GET /_cat/shards?index=index_name 相关参数： # 最大重试，默认为 5 index.allocation.max_retries # 负载均衡参数，默认为 true cluster.routing.rebalance.enable 参考 cat API</description>
+      <description>集群状态显示黄色 集群中存在未分配的 shards。在某个节点重新启动后也不能自动分配。 查看集群副本恢复状态： GET user/_recovery?active_only=true 查看未分配原因： GET _cluster/allocation/explain?pretty 结果中有：allocation_status: &amp;quot;no_attempt&amp;quot; 重新执行分配： POST /_cluster/reroute?retry_failed=true 查看相应索引的分片： GET /_cat/shards?index=index_name 分片自动分配超时时间 POST /_all/_settings { &amp;quot;settings&amp;quot;: { &amp;quot;index.unassigned.node_left.delayed_timeout&amp;quot;: &amp;quot;5m&amp;quot; } } 报错 1.提示错误 too_many_clauses 异常： Caused by: org.elasticsearch.common.io.stream.NotSerializableExceptionWrapper: too_many_clauses:</description>
     </item>
     
     <item>

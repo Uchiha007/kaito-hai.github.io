@@ -6,10 +6,28 @@
     <description>Recent content in Cheatsheets on 天空之城</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Dec 2019 23:46:44 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jan 2020 22:56:15 +0800</lastBuildDate>
     
 	<atom:link href="/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go Collect</title>
+      <link>/cheatsheet/go-collect/</link>
+      <pubDate>Sun, 12 Jan 2020 22:56:15 +0800</pubDate>
+      
+      <guid>/cheatsheet/go-collect/</guid>
+      <description>golang 入门 golang 文件操作 golang-fmt-printing regular-expressions</description>
+    </item>
+    
+    <item>
+      <title>Go Object Oriented</title>
+      <link>/cheatsheet/go-object-oriented/</link>
+      <pubDate>Sat, 04 Jan 2020 02:34:28 +0800</pubDate>
+      
+      <guid>/cheatsheet/go-object-oriented/</guid>
+      <description>go 语言中的面向对象 结构体是值类型，复制时值会被拷贝。 匿名结构体 适用于临时使用一次 person := struct { Id string Name string }{&amp;quot;1&amp;quot;, &amp;quot;Tom&amp;quot;} fmt.Println(person,person.Name) 任意类型-空接口 interface{} 与其他类型不一致，是一种独立的类型，如果要获取空接口变量中存储的特定类型的数据，需要使用类型断言或者类型检测实现。 var xyz interface{} xyz = &amp;quot;和&amp;quot; 类型断言 var xyz interface{} xyz = &amp;</description>
+    </item>
     
     <item>
       <title>Php</title>
@@ -36,6 +54,15 @@
       
       <guid>/cheatsheet/mysql-json/</guid>
       <description> JSON_REPLACE  -- one way JSON_REPLACE(data,&#39;$.&amp;quot;time&amp;quot;&#39;,data-&amp;gt;&#39;$.&amp;quot;time&amp;quot;&#39; * 1000) -- another way JSON_REPLACE(data,&#39;$.time&#39;,data-&amp;gt;&#39;$.time&#39; * 1000)   JSON_EXTRACT  JSON_EXTRACT(data,&#39;$.title&#39;)   JSON_INSERT  JSON_INSERT(data, &#39;$.title&#39;, CONVERT(&#39;{&amp;quot;type&amp;quot;:&amp;quot;string&amp;quot;}&#39;,JSON));   JSON_SET  json_set(fields,&amp;quot;$.title&amp;quot;,CONVERT(&#39;{&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;}&#39;,JSON)); -- update update post set fields = json_set(fields,&amp;quot;$.title&amp;quot;,CONVERT(&#39;{&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;}&#39;,JSON));  </description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>/cheatsheet/go/</link>
+      <pubDate>Fri, 06 Dec 2019 10:26:35 +0800</pubDate>
+      
+      <guid>/cheatsheet/go/</guid>
+      <description>基础概念 //当前程序的包名 package main //导入其他的包 import &amp;quot;fmp&amp;quot; //可以用大括号导入多个 //常量的定义 const PI = 3.14 //全局变量的声明和赋值 var name = &amp;quot;gopher&amp;quot; //一般类型声明 type newType int //结构的声明 type gopher struct{} //接口的声明 type golang interface{} //由main函数作为程序入口 func main() { fmp.Println(&amp;quot;hello&amp;quot;) } // 初始化多个变量 a,b := 1,2 // := 不可以再函数外使用，函数外的语法块</description>
     </item>
     
   </channel>

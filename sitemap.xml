@@ -4,16 +4,26 @@
   
   <url>
     <loc>/cheatsheet/</loc>
-    <lastmod>2019-12-27T23:46:44+08:00</lastmod>
+    <lastmod>2020-01-12T22:56:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/cheatsheet/php/</loc>
-    <lastmod>2019-12-27T23:46:44+08:00</lastmod>
+    <loc>/cheatsheet/go-collect/</loc>
+    <lastmod>2020-01-12T22:56:15+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-01-12T22:56:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cheatsheet/go-object-oriented/</loc>
+    <lastmod>2020-01-04T02:34:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cheatsheet/php/</loc>
     <lastmod>2019-12-27T23:46:44+08:00</lastmod>
   </url>
   
@@ -90,6 +100,11 @@
   <url>
     <loc>/about/</loc>
     <lastmod>2019-12-07T10:03:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cheatsheet/go/</loc>
+    <lastmod>2019-12-06T10:26:35+08:00</lastmod>
   </url>
   
   <url>

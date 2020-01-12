@@ -97,7 +97,9 @@
     <li>
       <ul>
         <li><a href="#heading">集群状态显示黄色</a></li>
-        <li><a href="#heading2">参考</a></li>
+        <li><a href="#heading1">分片自动分配超时时间</a></li>
+        <li><a href="#heading2">报错</a></li>
+        <li><a href="#heading4">参考</a></li>
       </ul>
     </li>
   </ul>
@@ -142,15 +144,32 @@
 </code></pre>
 </li>
 </ol>
-<h4 id="heading1">相关参数：</h4>
+<h3 id="heading1">分片自动分配超时时间</h3>
+<pre><code class="language-shell">POST /_all/_settings
+{
+  &quot;settings&quot;: {
+    &quot;index.unassigned.node_left.delayed_timeout&quot;: &quot;5m&quot;
+  }
+}
+</code></pre>
+<h3 id="heading2">报错</h3>
+<h4 id="1-toomanyclauses">1.提示错误 <code>too_many_clauses</code></h4>
+<p>异常：
+<code>Caused by: org.elasticsearch.common.io.stream.NotSerializableExceptionWrapper: too_many_clauses: maxClauseCount is set to 1024</code></p>
+<p>解决方式：</p>
+<pre><code>// 编辑elasticsearch.yml，添加如下配置：
+index.query.bool.max_clause_count: 10240
+</code></pre>
+<h4 id="heading3">相关参数：</h4>
 <pre><code class="language-shell"># 最大重试，默认为 5
 index.allocation.max_retries
 # 负载均衡参数，默认为 true
 cluster.routing.rebalance.enable
 </code></pre>
-<h3 id="heading2">参考</h3>
+<h3 id="heading4">参考</h3>
 <ol>
 <li>cat APIs，<a href="/post/elasticsearch-cat-shards">查看分片状态</a></li>
+<li><a href="https://www.jianshu.com/p/bb0cf8a6a662">https://www.jianshu.com/p/bb0cf8a6a662</a></li>
 </ol>
 
 		</div>
@@ -282,7 +301,7 @@ cluster.routing.rebalance.enable
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2019 天空之城.
+			&copy; 2020 天空之城.
 			<span class="footer__copyright-credits">使用 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 技术与 <a href="https://github.com/kingfsen/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> 主题</span>
 		</div>
 	</div>
